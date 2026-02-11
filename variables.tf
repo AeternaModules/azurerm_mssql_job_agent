@@ -17,7 +17,7 @@ EOT
     database_id = string
     location    = string
     name        = string
-    sku         = optional(string, "JA100")
+    sku         = optional(string) # Default: "JA100"
     tags        = optional(map(string))
     identity = optional(object({
       identity_ids = set(string)
