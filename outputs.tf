@@ -1,3 +1,7 @@
+output "mssql_job_agents_id" {
+  description = "Map of id values across all mssql_job_agents, keyed the same as var.mssql_job_agents"
+  value       = { for k, v in azurerm_mssql_job_agent.mssql_job_agents : k => v.id }
+}
 output "mssql_job_agents_database_id" {
   description = "Map of database_id values across all mssql_job_agents, keyed the same as var.mssql_job_agents"
   value       = { for k, v in azurerm_mssql_job_agent.mssql_job_agents : k => v.database_id }
